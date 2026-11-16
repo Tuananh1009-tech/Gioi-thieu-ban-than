@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Giới thiệu bản thân</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1e8;--card:#fffdf7;--ink:#1d2a22;--muted:#5d6b62;--green:#1f4d36;--gold:#b8892b;--red:#b3261e;--line:#e2dccb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101a14;--card:#17241c;--ink:#eef2ea;--muted:#a3b3a8;--green:#5fb98a;--gold:#e0b04f;--red:#ff7b72;--line:#2a3b31}}
+:root[data-theme="dark"]{--bg:#101a14;--card:#17241c;--ink:#eef2ea;--muted:#a3b3a8;--green:#5fb98a;--gold:#e0b04f;--red:#ff7b72;--line:#2a3b31}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro",system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:20px 16px 48px}
+.hero{background:linear-gradient(135deg,#17402c,#2c6b4a 60%,#b8892b);color:#fff;border-radius:24px;padding:32px 22px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"★";position:absolute;right:-10px;top:-40px;font-size:200px;opacity:.08}
+.avatar{width:104px;height:104px;border-radius:50%;margin:0 auto 14px;background:rgba(255,255,255,.15);border:3px solid #f3d27a;display:grid;place-items:center;font-size:44px;overflow:hidden;cursor:pointer}
+.avatar img{width:100%;height:100%;object-fit:cover}
+h1{margin:0;font-size:clamp(26px,7vw,40px);font-weight:800;letter-spacing:.2px}
+.tag{margin:6px 0 0;opacity:.9}
+.grid{display:grid;gap:12px;margin-top:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+.card small{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.8px;font-weight:700}
+.card .v{font-size:18px;font-weight:600;margin-top:2px;word-break:break-word}
+h2{margin:34px 0 12px;font-size:22px;color:var(--green);display:flex;align-items:center;gap:10px}
+h2::before{content:"★";color:var(--gold);font-size:18px}
+.hint{color:var(--muted);font-size:13px;margin:0 0 8px}
+[contenteditable]{outline:none;border-radius:6px;transition:background .2s}
+[contenteditable]:focus{background:rgba(184,137,43,.18)}
+.frame{position:relative;margin:0 auto;max-width:420px;padding:14px;border-radius:20px;background:linear-gradient(135deg,var(--gold),#f3d27a,var(--gold));box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.inner{position:relative;aspect-ratio:3/4;border-radius:10px;background:var(--card);border:2px dashed var(--green);display:grid;place-items:center;text-align:center;overflow:hidden;cursor:pointer;color:var(--muted);padding:16px}
+.inner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.inner b{display:block;font-size:40px;color:var(--gold)}
+.cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(10,30,20,.88));color:#fff;padding:36px 12px 12px;text-align:center;font-weight:700;pointer-events:none}
+.cap span{display:block;font-size:12px;font-weight:400;opacity:.9}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.btn{background:var(--green);color:#fff;border:0;border-radius:999px;padding:10px 18px;font:600 14px "Be Vietnam Pro",sans-serif;text-decoration:none;cursor:pointer}
+.btn.alt{background:transparent;color:var(--green);border:1.5px solid var(--green)}
+:root:not([data-theme="light"]) .btn{color:#0c1a12}
+.video{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+footer{text-align:center;color:var(--muted);font-size:13px;margin-top:36px}
+input[type=file]{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <label class="avatar" id="avatarBox" title="Chạm để thêm ảnh đại diện"><span id="avatarEmoji">🙂</span><input type="file" accept="image/*" id="avatarIn"></label>
+  <h1 contenteditable data-k="name">Nguyễn Văn A</h1>
+  <p class="tag" contenteditable data-k="tag">Ước mơ trở thành kỹ sư quân sự tương lai</p>
+</header>
+
+<p class="hint" style="margin-top:14px">✏️ Chạm vào chữ để sửa thông tin. Ảnh đại diện: chạm vào hình tròn để chọn ảnh. Dữ liệu được lưu trên trình duyệt của bạn.</p>
+
+<section class="grid">
+  <div class="card"><small>Họ và tên</small><div class="v" contenteditable data-k="name2">Nguyễn Văn A</div></div>
+  <div class="card"><small>Ngày tháng năm sinh</small><div class="v" contenteditable data-k="dob">01/01/2008</div></div>
+  <div class="card"><small>Lớp</small><div class="v" contenteditable data-k="cls">12A1</div></div>
+  <div class="card"><small>Trường</small><div class="v" contenteditable data-k="school">THPT ........</div></div>
+  <div class="card" style="grid-column:1/-1"><small>Sở thích</small><div class="v" contenteditable data-k="hobby">Đọc sách, chơi thể thao, nghe nhạc…</div></div>
+</section>
+
+<h2>Ngôi trường em mơ ước</h2>
+<div class="frame">
+  <label class="inner" id="photoBox">
+    <div id="ph"><b>★</b>Chạm để ghép ảnh của bạn vào khung</div>
+    <input type="file" accept="image/*" id="photoIn">
+    <div class="cap">Học viện Kỹ thuật Quân sự<span>Le Quy Don Technical University</span></div>
+  </label>
+</div>
+<div class="btns">
+  <a class="btn" href="https://vi.wikipedia.org/wiki/H%E1%BB%8Dc_vi%E1%BB%87n_K%E1%BB%B9_thu%E1%BA%ADt_Qu%C3%A2n_s%E1%BB%B1" target="_blank" rel="noopener">Xem trên Wikipedia</a>
+  <button class="btn alt" id="clearPhoto" type="button">Xoá ảnh</button>
+</div>
+
+<h2>Video yêu thích</h2>
+<div class="video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yhe2-mKasCA?si=DPlJIQ8GND8N1JYI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<p class="hint" style="text-align:center;margin-top:10px">Video không hiện? <a href="https://www.youtube.com/watch?v=yhe2-mKasCA" target="_blank" rel="noopener" style="color:var(--green)">Mở trên YouTube</a></p>
+
+<footer>★ Cố gắng hôm nay, vững bước ngày mai ★</footer>
+</div>
+
+<script>
+(function(){
+  var S={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}},del:function(k){try{localStorage.removeItem(k)}catch(e){}}};
+
+  document.querySelectorAll("[data-k]").forEach(function(el){
+    var v=S.get("gt_"+el.dataset.k); if(v) el.textContent=v;
+    el.addEventListener("input",function(){
+      S.set("gt_"+el.dataset.k,el.textContent);
+      if(el.dataset.k==="name"||el.dataset.k==="name2"){
+        var o=el.dataset.k==="name"?"name2":"name";
+        var t=document.querySelector('[data-k="'+o+'"]'); if(t&&t!==el){t.textContent=el.textContent;S.set("gt_"+o,el.textContent);}
+      }
+    });
+  });
+
+  function readImg(file,cb){
+    if(!file) return;
+    var r=new FileReader();
+    r.onload=function(){cb(r.result)};
+    r.readAsDataURL(file);
+  }
+  function setPhoto(src){
+    var box=document.getElementById("photoBox"),ph=document.getElementById("ph");
+    var old=box.querySelector("img"); if(old) old.remove();
+    if(!src){ph.style.display="";return;}
+    ph.style.display="none";
+    var i=document.createElement("img"); i.src=src; i.alt="Ảnh ghép vào Học viện Kỹ thuật Quân sự";
+    box.insertBefore(i,box.querySelector(".cap"));
+  }
+  function setAvatar(src){
+    var box=document.getElementById("avatarBox"),e=document.getElementById("avatarEmoji");
+    var old=box.querySelector("img"); if(old) old.remove();
+    if(!src){e.style.display="";return;}
+    e.style.display="none";
+    var i=document.createElement("img"); i.src=src; i.alt="Ảnh đại diện"; box.appendChild(i);
+  }
+  function shrink(src,max,cb){
+    var im=new Image();
+    im.onload=function(){
+      var s=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement("canvas");
+      c.width=im.width*s;c.height=im.height*s;c.getContext("2d").drawImage(im,0,0,c.width,c.height);
+      cb(c.toDataURL("image/jpeg",.85));
+    };
+    im.src=src;
+  }
+
+  document.getElementById("photoIn").addEventListener("change",function(e){
+    readImg(e.target.files[0],function(d){shrink(d,1000,function(s){setPhoto(s);S.set("gt_photo",s);});});
+  });
+  document.getElementById("avatarIn").addEventListener("change",function(e){
+    readImg(e.target.files[0],function(d){shrink(d,300,function(s){setAvatar(s);S.set("gt_avatar",s);});});
+  });
+  document.getElementById("clearPhoto").addEventListener("click",function(){setPhoto(null);S.del("gt_photo");});
+
+  var p=S.get("gt_photo"); if(p) setPhoto(p);
+  var a=S.get("gt_avatar"); if(a) setAvatar(a);
+})();
+</script>
+</body>
+</html>
